@@ -1,0 +1,36 @@
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace SportsStore.Domain.Entities
+{
+
+    public class ShippingDetails
+    {
+        [Required(ErrorMessage = "Please enter a name")]
+        [Display(Name="Name")]
+        public string Name { get; set; }
+
+        [Required(ErrorMessage = "Please enter the first address line")]
+        [Display(Name = "Line 1")]
+        public string Line1 { get; set; }
+        [Display(Name = "Line 2")]
+        public string Line2 { get; set; }
+        [Display(Name = "Line 1")]
+        public string Line3 { get; set; }
+
+        [Required(ErrorMessage = "Please enter a city name")]
+        [Display(Name = "City")]
+        public string City { get; set; }
+
+        [Required(ErrorMessage = "Please enter a state name")]
+        [Display(Name = "Province")]
+        public string State { get; set; }
+        [Display(Name = "Postal Code")]
+        public string Zip { get; set; }
+
+        [Required(ErrorMessage = "Please enter a country name")]
+        [Display(Name = "Country")]
+        public string Country { get; set; }
+        [Display(Name = "Gift wrap")]
+        public bool GiftWrap { get; set; }
+    }
+}

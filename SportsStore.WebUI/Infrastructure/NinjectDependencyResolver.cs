@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Configuration;
 using System.Web.Mvc;
 using Ninject;
 using Moq;
@@ -28,6 +28,15 @@ namespace SportsStore.WebUI.Infrastructure
         }
 
         private void AddBindings() {
+            EmailSettings emailSettings = new EmailSettings
+            {
+                WriteAsFile = bool.Parse(ConfigurationManager
+                    .AppSettings["Email.WriteAsFile"] ?? "false")
+            };
+
+            kernel.Bind<IOrderProcessor>().To<EmailOrderProcessor>()
+                .WithConstructorArgument("settings", emailSettings);
+
             kernel.Bind<IProductRepository>().To<EFProductRepository>();
         }
     }
