@@ -19,7 +19,7 @@ namespace SportsStore.WebUI
                 defaults: new
                 {
                     controller = "Product",
-                    action = "List",
+                    action = "Home",
                     category = (string)null,
                     page = 1
                 }

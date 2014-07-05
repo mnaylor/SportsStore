@@ -19,6 +19,11 @@ namespace SportsStore.WebUI.Controllers
             this.repository = productRepository;
         }
 
+        public ViewResult Home()
+        {
+            return View();
+        }
+
         public ViewResult List(string category, int page = 1)
         {
             ProductsListViewModel model = new ProductsListViewModel
