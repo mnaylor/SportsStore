@@ -4,5 +4,9 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Home</h2>
-
+<div class="jumbotron">
+    <h1>Sports Store</h1>
+    <p class="lead">This is where I put lots of awesome things about my store.</p>
+    <p>@Html.ActionLink("Browse Products", "List", "Product", null,
+    new { @class = "btn btn-success btn-lg" })</p>
+</div>
