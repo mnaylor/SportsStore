@@ -1,6 +1,8 @@
 ﻿@model IEnumerable<string>
 
-@Html.ActionLink("Home", "List", "Product", null,
+<h4>Product Categories</h4>
+
+@Html.ActionLink("All Products", "List", "Product", null,
     new { @class = "btn btn-block btn-default btn-lg" })
 
 @foreach (var link in Model)
